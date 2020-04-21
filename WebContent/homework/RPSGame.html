@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>집가고싶다</title>
+    
+</head>
+<script>
+    
+    function CPrandom(user) {
+        console.log(user);
+
+    var con = parseInt((Math.random()*10) % 3+1);  
+        console.log(con);
+
+   var img_tag = document.getElementById("user.img");
+            if(user==1) {
+            img_tag.src= "./images/scissors"+".jpg";
+            }
+            else if(user==2) {
+            img_tag.src= "./images/rock"+".jpg";
+            }
+            else if(user==3) {
+            img_tag.src= "./images/paper"+".jpg";
+            }
+
+    var c_img_tag = document.getElementById("con.img");
+            if(con==1) {
+            c_img_tag.src= "./images/scissors"+".jpg";
+            }
+            else if(con==2) {
+            c_img_tag.src= "./images/rock"+".jpg";
+            }
+            else if(con==3) {
+            c_img_tag.src= "./images/paper"+".jpg";
+            }
+ 
+        switch(user - con) {
+            case 0:
+            document.getElementById("result").innerText = "비겼단다";
+            console.log("비겼단다")
+            break;
+            case 1: case -2:
+            document.getElementById("result").innerText = "이겼단다";
+            console.log("이겼단다")
+            break;
+            case -1: case 2:
+            document.getElementById("result").innerText = "ㅋㅋ졌네";
+            console.log("ㅋㅋ이걸지네")
+            break;
+        }
+    }
+</script>
+<body>
+    <h2>가위바위보 히히히</h2>
+    <table border="1" width="800">
+        <tr>
+            <td>나</td>
+            <td>컴터</td>
+        </tr>
+        <tr>
+            <td><img id="user.img" src="./images/start.png" alt=""></td>
+            <td><img id="con.img" src="./images/start.png" alt=""></td>
+        </tr>
+        <tr>
+            <td id="result" colspan="2"
+            style="font-size:2em; color:skyblue"> &nbsp;</td>
+        </tr>
+    </table>
+        <table border="1" cellpadding="5" cellspacing='1'
+            width="800"></table>
+        <input type="button" value="가위"
+        onclick="CPrandom(1);" />
+        <input type="button" value="바위"
+        onclick="CPrandom(2);" />
+        <input type="button" value="보 임마"
+        onclick="CPrandom(3);" />
+        <!-- <span id="CPrandom" style="font-size:2em; color:skyblue">
+            여기서 나와염 -->
+        </span>
+
+</body>
+</html>
